@@ -28,7 +28,6 @@ class MeditationAudioController extends Controller
             'audio_file'       => 'required|file|mimes:mp3,wav,ogg,aac|max:20480',
             'cover_image'      => 'nullable|image|max:2048',
             'duration_seconds' => 'nullable|integer|min:0',
-            'is_active'        => 'nullable|boolean',
         ]);
 
         $audioFile = $request->file('audio_file');
@@ -64,7 +63,6 @@ class MeditationAudioController extends Controller
             'audio_file'       => 'nullable|file|mimes:mp3,wav,ogg,aac|max:20480',
             'cover_image'      => 'nullable|image|max:2048',
             'duration_seconds' => 'nullable|integer|min:0',
-            'is_active'        => 'nullable|boolean',
         ]);
 
         if ($request->hasFile('audio_file')) {
