@@ -67,4 +67,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Chat::class, 'sender_id');
     }
+
+    public function moodLogs()
+    {
+        return $this->hasMany(UserMoodLog::class);
+    }
+
+    public function meditationLogs()
+    {
+        return $this->hasMany(UserMeditationLog::class);
+    }
+
+    public function articleReads()
+    {
+        return $this->hasMany(ArticleRead::class);
+    }
 }

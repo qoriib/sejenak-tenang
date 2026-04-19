@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\ArticleRead;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -25,7 +26,15 @@ class ArticleController extends Controller
         if (!$article->is_published) {
             abort(404);
         }
-        
+
+        // Catat aktivitas baca artikel jika user sudah login
+        if (auth()->check()) {
+            ArticleRead::create([
+                'user_id'    => auth()->id(),
+                'article_id' => $article->id,
+            ]);
+        }
+
         return view('articles.show', compact('article'));
     }
 }

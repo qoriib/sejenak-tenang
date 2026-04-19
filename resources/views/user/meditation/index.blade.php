@@ -83,12 +83,14 @@
 
 @push('scripts')
 <script>
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     let currentBtn = null;
 
     document.querySelectorAll('.play-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const audioSrc   = this.dataset.audio;
             const audioTitle = this.dataset.title;
+            const audioId    = this.dataset.id;
             const mainAudio  = document.getElementById('mainAudio');
             const player     = document.getElementById('audioPlayer');
             const titleEl    = document.getElementById('playerTitle');
@@ -103,6 +105,15 @@
             mainAudio.play();
             this.textContent = '⏸ Memutar...';
             currentBtn = this;
+
+            // Log aktivitas meditasi
+            fetch(`/user/meditation/${audioId}/play`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json',
+                },
+            }).catch(() => {}); // silent fail — tidak perlu blokir UI
 
             mainAudio.onended = () => {
                 this.textContent = '▶ Putar';
@@ -124,3 +135,4 @@
 </script>
 @endpush
 @endsection
+

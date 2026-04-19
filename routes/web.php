@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
         Route::resource('mood-tracker', App\Http\Controllers\Admin\MoodTrackerController::class);
         Route::resource('meditation', App\Http\Controllers\Admin\MeditationAudioController::class)
             ->except(['show']);
+        Route::resource('user-activity', App\Http\Controllers\Admin\UserActivityController::class)
+            ->only(['index', 'show'])
+            ->parameters(['user-activity' => 'user']);
     });
 
     // User Routes
@@ -56,6 +59,7 @@ Route::middleware('auth')->group(function () {
 
         // Meditation
         Route::get('/meditation', [App\Http\Controllers\MeditationController::class, 'index'])->name('meditation.index');
+        Route::post('/meditation/{audio}/play', [App\Http\Controllers\MeditationController::class, 'play'])->name('meditation.play');
     });
 
     // Psychologist Routes

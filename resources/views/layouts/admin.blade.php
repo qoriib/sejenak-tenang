@@ -107,6 +107,10 @@
                            href="{{ route('admin.meditation.index') }}">
                             <i class="ph-duotone ph-music-notes me-2"></i>Audio Meditasi
                         </a>
+                        <a class="nav-link {{ request()->routeIs('admin.user-activity.*') ? 'active' : '' }}"
+                           href="{{ route('admin.user-activity.index') }}">
+                            <i class="ph-duotone ph-clock-clockwise me-2"></i>Riwayat Aktivitas
+                        </a>
                         <hr class="my-3" style="border-color: rgba(255,255,255,0.3);">
                         <a class="nav-link" href="{{ route('home') }}">
                             <i class="ph-duotone ph-globe me-2"></i>Lihat Website
