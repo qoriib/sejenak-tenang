@@ -29,9 +29,9 @@ Route::middleware('auth')->group(function () {
         Route::patch('/payments/{payment}/verify', [App\Http\Controllers\Admin\PaymentController::class, 'verify'])->name('payments.verify');
         Route::patch('/payments/{payment}/reject', [App\Http\Controllers\Admin\PaymentController::class, 'reject'])->name('payments.reject');
         Route::resource('mood-tracker', App\Http\Controllers\Admin\MoodTrackerController::class);
-Route::resource('meditation', App\Http\Controllers\Admin\MeditationAudioController::class)
-    ->except(['show'])
-    ->parameters(['meditation' => 'meditation_audio']);    });
+        Route::resource('meditation', App\Http\Controllers\Admin\MeditationAudioController::class)
+            ->except(['show']);
+    });
 
     // User Routes
     Route::prefix('user')->name('user.')->middleware('auth')->group(function () {

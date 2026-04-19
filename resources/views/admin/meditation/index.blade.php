@@ -6,13 +6,6 @@
         <a href="{{ route('admin.meditation.create') }}" class="btn btn-primary">Tambah Audio</a>
     </div>
 
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    @endif
-
     <div class="card">
         <div class="card-body">
             @if ($audios->count() > 0)
