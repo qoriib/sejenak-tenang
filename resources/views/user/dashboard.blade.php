@@ -41,6 +41,20 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Mood Tracker Card -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                     <div class="card text-center h-100 shadow-sm border-0 rounded-4">
+                        <div class="card-body py-5">
+                            <div class="mb-4">
+                                <i class="ph-duotone ph-smiley" style="font-size:70px;color:var(--primary-color);"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">Mood Tracker</h4>
+                            <p class="card-text text-muted mb-4">Pantau dan catat perkembangan mood harian untuk memahami kondisi emosional Anda</p>
+                            <a href="{{route('user.mood-tracker.index')}}" class="btn btn-primary px-4 rounded-pill">Lihat Mood Kamu</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
