@@ -14,16 +14,26 @@
             <div>Total Users</div>
         </div>
     </div>
+
     <div class="col-lg-3 col-md-6 mb-3">
         <div class="stats-card">
             <div class="stats-number">{{ $stats['total_articles'] }}</div>
             <div>Total Artikel</div>
         </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-3">
+        <div class="stats-card">
+            <div class="stats-number">{{ $stats['total_audios'] }}</div>
+            <div>Total Audio Meditasi</div>
         </div>
     </div>
-</div>
 
-
+    <div class="col-lg-3 col-md-6 mb-3">
+        <div class="stats-card">
+            <div class="stats-number">{{ $stats['total_moods'] }}</div>
+            <div>Total Mood Tercatat</div>
+        </div>
     </div>
 </div>
 @endsection
