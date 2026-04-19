@@ -16,6 +16,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/meditation
 /storage/*.key
 /storage/pail
 /public/mood-tracker
